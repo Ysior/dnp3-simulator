@@ -1,0 +1,92 @@
+# Simulator\DNP3\DefaultOutstationPlugin\DefaultOutstationPlugin.csproj
+
+[← Back to the assessment index](../../assessment.md)
+
+## Project Info
+
+- **Current Target Framework:** net7.0
+- **Proposed Target Framework:** net8.0-windows
+- **SDK-style**: False
+- **Project Kind:** ClassicWinForms
+- **Dependencies**: 3
+- **Dependants**: 1
+- **Number of Files**: 23
+- **Number of Files with Incidents**: 16
+- **Lines of Code**: 2146
+- **Estimated LOC to modify**: 2041+ (at least 95,1% of the project)
+
+## Related Projects
+
+**Depends on (3)** — projects this one references:
+
+- [D:\DNP3\dnp3-simulator\Simulator\DNP3\DNP3Commons\DNP3Commons.csproj](../projects/DNP3Commons.md)
+- [D:\DNP3\dnp3-simulator\Simulator\DNP3\DNP3PluginAPI\DNP3PluginAPI.csproj](../projects/DNP3PluginAPI.md)
+- [D:\DNP3\dnp3-simulator\Simulator\SimulatorAPI\ModuleAPI.csproj](../projects/ModuleAPI.md)
+
+**Depended on by (1)** — projects that reference this one:
+
+- [D:\DNP3\dnp3-simulator\Simulator\DNP3\DNP3Simulator\DNP3Module.csproj](../projects/DNP3Module.md)
+
+## Dependency Graph
+
+Legend:
+📦 SDK-style project
+⚙️ Classic project
+
+```mermaid
+flowchart TB
+    subgraph upstream["Dependants (1)"]
+        P8["<b>⚙️&nbsp;DNP3Module.csproj</b><br/><small>net7.0</small>"]
+        click P8 "../projects/DNP3Module.md"
+    end
+    subgraph current["DefaultOutstationPlugin.csproj"]
+        MAIN["<b>⚙️&nbsp;DefaultOutstationPlugin.csproj</b><br/><small>net7.0</small>"]
+        click MAIN "../projects/DefaultOutstationPlugin.md"
+    end
+    subgraph downstream["Dependencies (3)"]
+        P3["<b>⚙️&nbsp;ModuleAPI.csproj</b><br/><small>net7.0</small>"]
+        P7["<b>⚙️&nbsp;DNP3Commons.csproj</b><br/><small>net608</small>"]
+        P4["<b>⚙️&nbsp;DNP3PluginAPI.csproj</b><br/><small>net7.0</small>"]
+        click P3 "../projects/ModuleAPI.md"
+        click P7 "../projects/DNP3Commons.md"
+        click P4 "../projects/DNP3PluginAPI.md"
+    end
+    P8 --> MAIN
+    MAIN --> P3
+    MAIN --> P7
+    MAIN --> P4
+
+```
+
+## API Compatibility
+
+| Category | Count | Impact |
+| :--- | :---: | :--- |
+| 🔴 Binary Incompatible | 1928 | High - Require code changes |
+| 🟡 Source Incompatible | 113 | Medium - Needs re-compilation and potential conflicting API error fixing |
+| 🔵 Behavioral change | 0 | Low - Behavioral changes that may require testing at runtime |
+| ✅ Compatible | 1423 |  |
+| ***Total APIs Analyzed*** | ***3464*** |  |
+
+## NuGet Package Issues
+
+| Package | Current Version | Suggested Version | Severity | Issue |
+| :--- | :---: | :---: | :---: | :--- |
+| opendnp3 | 2.2.0-M1 | 3.1.2 | 🔴 Mandatory | Pakiet NuGet jest niezgodny |
+
+Every project affected by these packages, and the versions the repository settles on: [aggregate NuGet packages](../nuget/aggregate-packages.md).
+
+## Binding Redirect Configuration
+
+| Rule | Severity | Details | Recommendation |
+| :--- | :---: | :--- | :--- |
+| AutoGenerateBindingRedirects not set and no manual redirects | 🟡 Potential | AutoGenerateBindingRedirects is not set in DefaultOutstationPlugin.csproj, no manual redirects found | Explicitly enable <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects> or add manual binding redirects. |
+
+## Project Technologies and Features
+
+| Technology | Issues | Percentage | Migration Path |
+| :--- | :---: | :---: | :--- |
+| Windows Forms Legacy Controls | 2 | 0,1% | Legacy Windows Forms controls that have been removed from .NET Core/5+ including StatusBar, DataGrid, ContextMenu, MainMenu, MenuItem, and ToolBar. These controls were replaced by more modern alternatives. Use ToolStrip, MenuStrip, ContextMenuStrip, and DataGridView instead. |
+| GDI+ / System.Drawing | 113 | 5,5% | System.Drawing APIs for 2D graphics, imaging, and printing that are available via NuGet package System.Drawing.Common. Note: Not recommended for server scenarios due to Windows dependencies; consider cross-platform alternatives like SkiaSharp or ImageSharp for new code. |
+| Windows Forms | 1928 | 94,5% | Windows Forms APIs for building Windows desktop applications with traditional Forms-based UI that are available in .NET on Windows. Enable Windows Desktop support: Option 1 (Recommended): Target net9.0-windows; Option 2: Add <UseWindowsDesktop>true</UseWindowsDesktop>; Option 3 (Legacy): Use Microsoft.NET.Sdk.WindowsDesktop SDK. |
+

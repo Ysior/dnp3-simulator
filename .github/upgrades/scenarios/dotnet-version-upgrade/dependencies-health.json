@@ -1,0 +1,1541 @@
+{
+  "packageGovernance": {
+    "totalDistinctPackages": 1,
+    "totalVersionDriftInstances": 0,
+    "targetFramework": "net8.0",
+    "packages": [
+      {
+        "name": "opendnp3",
+        "totalProjectCount": 6,
+        "distinctVersionCount": 1,
+        "recommendedVersion": "3.1.2",
+        "isCompatible": false,
+        "description": "Pakiet NuGet jest niezgodny",
+        "versions": [
+          {
+            "version": "2.2.0-M1",
+            "projects": [
+              "Commons",
+              "DefaultOutstationPlugin",
+              "DNP3Commons",
+              "DNP3Module",
+              "DNP3PluginAPI",
+              "RelayOutstationPlugin"
+            ],
+            "isRecommended": false
+          }
+        ],
+        "upgrade": {
+          "newVersion": "3.1.2"
+        }
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "Commons",
+      "path": "Simulator\\Commons\\Commons.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Commons\\Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "DefaultOutstationPlugin",
+      "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "ModuleAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\SimulatorAPI\\ModuleAPI.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3PluginAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "DNP3Commons",
+      "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net608"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "DNP3Module",
+      "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "SimulatorUI",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "physicalPath": "Simulator\\SimulatorUI\\obj\\Release\\SimulatorUI.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\Commons\\Commons.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "ModuleAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\SimulatorAPI\\ModuleAPI.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DefaultOutstationPlugin",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3PluginAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "RelayOutstationPlugin",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "DNP3PluginAPI",
+      "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "ModuleAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\SimulatorAPI\\ModuleAPI.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "ModuleAPI",
+      "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorAPI\\ModuleAPI.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\Commons\\Commons.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "RelayOutstationPlugin",
+      "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [
+          {
+            "name": "opendnp3",
+            "version": "2.2.0-M1",
+            "isTransitive": false,
+            "isGlobal": false,
+            "isImplicit": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\packages.config"
+              }
+            ],
+            "description": "Pakiet NuGet jest niezgodny",
+            "compatibility": "newVersionNeeded",
+            "recommendedVersion": "3.1.2",
+            "upgrade": {
+              "newVersion": "3.1.2"
+            }
+          }
+        ],
+        "assemblies": [
+          {
+            "name": "DNP3CLRAdapter",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRAdapter.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3CLRInterface",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "physicalPath": "packages\\opendnp3.2.2.0-M1\\lib\\net45\\DNP3CLRInterface.dll",
+            "compatibility": "valid"
+          },
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "ModuleAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\SimulatorAPI\\ModuleAPI.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3PluginAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    },
+    {
+      "name": "Simulator",
+      "path": "Simulator\\Simulator\\Simulator.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Deployment",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\Commons\\Commons.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "DNP3Module",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "ModuleAPI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\SimulatorAPI\\ModuleAPI.csproj",
+            "compatibility": "valid"
+          },
+          {
+            "name": "SimulatorUI",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "Simulator\\Simulator\\Simulator.csproj"
+              }
+            ],
+            "referencedProjectPath": "Simulator\\SimulatorUI\\SimulatorUI.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      },
+      "imports": [
+        {
+          "path": "simulator\\Simulator\\Simulator.csproj.user",
+          "isLocal": true
+        }
+      ]
+    },
+    {
+      "name": "SimulatorUI",
+      "path": "simulator\\SimulatorUI\\SimulatorUI.csproj",
+      "isSdk": false,
+      "currentFrameworks": [
+        "net7.0"
+      ],
+      "targetFramework": "net8.0",
+      "dependencies": {
+        "packages": [],
+        "assemblies": [
+          {
+            "name": "System",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Core",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml.Linq",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data.DataSetExtensions",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "Microsoft.CSharp",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Data",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Deployment",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Drawing",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Windows.Forms",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          },
+          {
+            "name": "System.Xml",
+            "version": "",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "compatibility": "valid"
+          }
+        ],
+        "projectReferences": [
+          {
+            "name": "Commons",
+            "isTransitive": false,
+            "definedIn": [
+              {
+                "path": "simulator\\SimulatorUI\\SimulatorUI.csproj"
+              }
+            ],
+            "referencedProjectPath": "simulator\\Commons\\Commons.csproj",
+            "compatibility": "valid"
+          }
+        ],
+        "frameworkReferences": []
+      }
+    }
+  ]
+}

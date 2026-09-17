@@ -1,0 +1,23 @@
+{
+  "reportConfigHash": "91158e4c",
+  "createdAtUtc": "2026-09-17T20:14:13.8999912Z",
+  "entries": [
+    {
+      "packageName": "opendnp3",
+      "packageVersion": "2.2.0-M1",
+      "insightsName": "opendnp3",
+      "insightsCurrentVersion": "2.2.0-M1",
+      "insightsNewVersion": "3.1.2",
+      "insightsDescription": "Pakiet NuGet jest niezgodny",
+      "insightsIsCompatible": false,
+      "insightsProjects": [
+        "Simulator\\Commons\\Commons.csproj",
+        "Simulator\\DNP3\\DefaultOutstationPlugin\\DefaultOutstationPlugin.csproj",
+        "simulator\\DNP3\\DNP3Commons\\DNP3Commons.csproj",
+        "Simulator\\DNP3\\DNP3Simulator\\DNP3Module.csproj",
+        "simulator\\DNP3\\DNP3PluginAPI\\DNP3PluginAPI.csproj",
+        "simulator\\DNP3\\RelayOutstationPlugin\\RelayOutstationPlugin.csproj"
+      ]
+    }
+  ]
+}
