@@ -1,0 +1,4 @@
+dotnet add package opendnp3 --version 3.1.2
+
+https://www.nuget.org/packages/opendnp3
+dotnet restore

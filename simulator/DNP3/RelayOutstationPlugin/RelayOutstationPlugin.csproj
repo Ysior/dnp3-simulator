@@ -10,6 +10,7 @@
     <RootNamespace>Automatak.Simulator.DNP3.RelayOutstationPlugin</RootNamespace>
     <AssemblyName>RelayOutstationPlugin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+	  <TargetFramework>net7.0</TargetFramework>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
