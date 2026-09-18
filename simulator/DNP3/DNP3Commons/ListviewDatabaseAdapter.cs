@@ -53,11 +53,6 @@ namespace Automatak.Simulator.DNP3.Commons
             this.Add(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED), "Counter");
         }
 
-        void IDatabase.Update(FrozenCounter update, ushort index, EventMode mode)
-        {
-            this.Add(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED), "FrozenCounter");
-        }
-
         void IDatabase.Update(BinaryOutputStatus update, ushort index, EventMode mode)
         {
             this.Add(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED), "BinaryOutputStatus");
@@ -66,6 +61,13 @@ namespace Automatak.Simulator.DNP3.Commons
         void IDatabase.Update(AnalogOutputStatus update, ushort index, EventMode mode)
         {
             this.Add(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED), "AnalogOutputStatus");
+        }
+
+        void IDatabase.FreezeCounter(ushort index, bool clear, EventMode mode) { }
+
+        void IDatabase.Update(OctetString update, ushort index, EventMode mode)
+        {
+            this.Add(update.ToMeasurement(index, TimestampMode.SYNCHRONIZED), "OctetString");
         }
 
         void IDatabase.Update(TimeAndInterval update, ushort index)

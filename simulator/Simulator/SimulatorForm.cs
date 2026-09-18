@@ -55,30 +55,30 @@ namespace Automatak.Simulator
             node.Text = simNode.DisplayName;
             node.Tag = simNode;
 
-            var menu = new ContextMenu();
+            var menu = new ContextMenuStrip();
 
             foreach (var nodeAction in simNode.Actions)
             {
-                var action = new MenuItem(nodeAction.DisplayName);
+                var action = new ToolStripMenuItem(nodeAction.DisplayName);
                 action.Click += new EventHandler(
-                    delegate(Object o, EventArgs a)
+                    delegate(Object? o, EventArgs a)
                     {
                         nodeAction.Invoke();
                     }
                 );
-                menu.MenuItems.Add(action);
+                menu.Items.Add(action);
             }
 
             if (simNode.Actions.Any())
             {
-                menu.MenuItems.Add("-");
+                menu.Items.Add(new ToolStripSeparator());
             }
             
             foreach (var factory in simNode.Children)
             {
-                var action = new MenuItem(factory.DisplayName);
+                var action = new ToolStripMenuItem(factory.DisplayName);
                 action.Click += new EventHandler(
-                    delegate(Object o, EventArgs a)
+                    delegate(Object? o, EventArgs a)
                     {
                         var callbacks = new TreeNodeCallbacks(this);
                         var child = factory.Create(callbacks);
@@ -88,31 +88,35 @@ namespace Automatak.Simulator
                         }
                     }
                 );
-                menu.MenuItems.Add(action);
+                menu.Items.Add(action);
             }
 
             if (simNode.Children.Any())
             {
-                menu.MenuItems.Add("-");
+                menu.Items.Add(new ToolStripSeparator());
             }
 
-            var item = new MenuItem("Remove");
+            var item = new ToolStripMenuItem("Remove");
             item.Click += new EventHandler(
-                delegate(Object o, EventArgs a)
+                delegate(Object? o, EventArgs a)
                 {
                     ShutdownFrom(node);
                     parent.Remove(node);
                 }
             );
            
-            menu.MenuItems.Add(item);
-            node.ContextMenu = menu;
+            menu.Items.Add(item);
+            node.ContextMenuStrip = menu;
             parent.Add(node);
         }
 
         private static void ShutdownFrom(TreeNode node)
         {
-            var simNode = node.Tag as ISimulatorNode;
+            if (node.Tag is not ISimulatorNode simNode)
+            {
+                return;
+            }
+
             foreach(TreeNode subnode in node.Nodes)
             {
                 ShutdownFrom(subnode);
@@ -137,7 +141,7 @@ namespace Automatak.Simulator
                 this.tabControlPlugins.TabPages.Add(page);
                 
                 item.Click += new EventHandler(
-                    delegate(Object o, EventArgs a)
+                    delegate(Object? o, EventArgs a)
                     {                        
                         var callbacks = new TreeNodeCallbacks(this);
                         var node = instance.Create(callbacks);
@@ -161,7 +165,11 @@ namespace Automatak.Simulator
             }
             else
             {
-                var view = tab.Tag as TreeView;
+                if (tab.Tag is not TreeView view)
+                {
+                    return Enumerable.Empty<Metric>();
+                }
+
                 var node = view.SelectedNode;
                 if (node == null)
                 {
@@ -169,7 +177,9 @@ namespace Automatak.Simulator
                 }
                 else
                 {
-                    return (node.Tag as ISimulatorNode).Metrics;                   
+                    return node.Tag is ISimulatorNode simNode
+                        ? simNode.Metrics
+                        : Enumerable.Empty<Metric>();
                 }
             }
         }

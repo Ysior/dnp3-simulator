@@ -62,25 +62,25 @@ namespace Automatak.Simulator.DNP3.Components
             switch(index)
             {
                 case(0):
-                    config.maxBinaryEvents = value;
+                    config.maxBinaryEvents = (ushort)value;
                     break;
                 case (1):
-                    config.maxDoubleBinaryEvents = value;
+                    config.maxDoubleBinaryEvents = (ushort)value;
                     break;
                 case (2):
-                    config.maxCounterEvents = value;
+                    config.maxCounterEvents = (ushort)value;
                     break;
                 case (3):
-                    config.maxFrozenCounterEvents = value;
+                    config.maxFrozenCounterEvents = (ushort)value;
                     break;
                 case (4):
-                    config.maxAnalogEvents = value;
+                    config.maxAnalogEvents = (ushort)value;
                     break;
                 case (5):
-                    config.maxBinaryOutputStatusEvents = value;
+                    config.maxBinaryOutputStatusEvents = (ushort)value;
                     break;
                 case (6):
-                    config.maxAnalogOutputStatusEvents = value;
+                    config.maxAnalogOutputStatusEvents = (ushort)value;
                     break;
             }            
         }

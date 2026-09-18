@@ -7,6 +7,13 @@ using Automatak.DNP3.Interface;
 
 namespace Automatak.Simulator.DNP3.Commons
 {
+    public enum TimestampMode
+    {
+        INVALID,
+        SYNCHRONIZED,
+        UNSYNCHRONIZED
+    }
+
     public enum MeasType
     {
         Binary,
@@ -25,12 +32,12 @@ namespace Automatak.Simulator.DNP3.Commons
         public Measurement(string displayValue, MeasurementBase meas, TimestampMode tsmode, MeasType type, UInt16 index, IQualityBitInfo info)
         {
             this.valueAsString = displayValue;
-            this.timeStamp = (tsmode == TimestampMode.INVALID) ? DateTime.Now : meas.Timestamp;
+            this.timeStamp = (tsmode == TimestampMode.INVALID) ? DateTime.Now : meas.Timestamp.Value;
             this.tsmode = tsmode;
             this.type = type;
             this.index = index;
             this.info = info;
-            this.quality = meas.Quality;
+            this.quality = meas.Quality.Value;
         }
 
         public Measurement(string displayValue, TimestampMode tsmode, MeasType type, UInt16 index, IQualityBitInfo info)

@@ -110,11 +110,20 @@ namespace Automatak.Simulator.DNP3.Commons
 
         void ILinkStatusListener.OnStateChange(LinkStatus value) { }
 
+        void ILinkStatusListener.OnUnknownDestinationAddress(ushort address) { }
+
+        void ILinkStatusListener.OnUnknownSourceAddress(ushort address) { }
+
         void ILinkStatusListener.OnKeepAliveInitiated() { }
 
         void ILinkStatusListener.OnKeepAliveFailure() { }
 
         void ILinkStatusListener.OnKeepAliveSuccess() { }
+
+        DNPTime IDnpTimeSource.Now()
+        {
+            return new DNPTime(DateTime.UtcNow, TimestampQuality.SYNCHRONIZED);
+        }
 
         bool IOutstationApplication.SupportsWriteAbsoluteTime
         {
@@ -185,5 +194,7 @@ namespace Automatak.Simulator.DNP3.Commons
 
             return warmRestartTime; 
         }
+
+        void IOutstationApplication.OnConfirmProcessed(bool result, uint invokeId, uint seqNum, uint responseLength) { }
     }
 }

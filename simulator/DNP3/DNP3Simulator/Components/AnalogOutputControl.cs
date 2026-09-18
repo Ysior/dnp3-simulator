@@ -37,7 +37,7 @@ namespace Automatak.Simulator.DNP3.Components
                 
                 var index = Convert.ToUInt16(this.numericUpDownIndex.Value);
                 var value = numericUpDownValue.Value;
-                var type = (AOType) comboBoxType.SelectedValue;
+                var type = comboBoxType.SelectedValue is AOType selectedType ? selectedType : AOType.Integer16;
                 switch (type)
                 { 
                     case(AOType.Integer16):
@@ -59,7 +59,7 @@ namespace Automatak.Simulator.DNP3.Components
 
                 var index = Convert.ToUInt16(this.numericUpDownIndex.Value);
                 var value = numericUpDownValue.Value;
-                var type = (AOType)comboBoxType.SelectedValue;
+                var type = comboBoxType.SelectedValue is AOType selectedType ? selectedType : AOType.Integer16;
                 switch (type)
                 {
                     case (AOType.Integer16):

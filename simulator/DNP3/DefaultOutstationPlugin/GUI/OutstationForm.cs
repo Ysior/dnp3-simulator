@@ -14,7 +14,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
 {    
     partial class OutstationForm : Form
     {
-        MeasurementCollection activeCollection = null;
+        MeasurementCollection? activeCollection = null;
 
         readonly IOutstation outstation;
         readonly EventedOutstationApplication application;
@@ -62,7 +62,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         
         void CheckState()
         {
-            if (((MeasType)comboBoxTypes.SelectedValue) != MeasType.OctetString && this.measurementView.SelectedIndices.Any())
+            if (comboBoxTypes.SelectedValue is MeasType selectedType && selectedType != MeasType.OctetString && this.measurementView.SelectedIndices.Any())
             {
                 this.buttonEdit.Enabled = true;
             }
@@ -115,7 +115,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         {
             var indices = this.measurementView.SelectedIndices;
 
-            switch ((MeasType) comboBoxTypes.SelectedValue)
+            switch (comboBoxTypes.SelectedValue is MeasType selectedType ? selectedType : default)
             { 
                 case(MeasType.Binary):
                     LoadBinaries(indices, true);
@@ -230,7 +230,10 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
 
         private void comboBoxColdRestartMode_SelectedValueChanged(object sender, EventArgs e)
         {
-            this.application.ColdRestartMode = (RestartMode) comboBoxColdRestartMode.SelectedValue;
+            if (comboBoxColdRestartMode.SelectedValue is RestartMode selectedMode)
+            {
+                this.application.ColdRestartMode = selectedMode;
+            }
         }
 
         private void numericUpDownColdRestartTime_ValueChanged(object sender, EventArgs e)

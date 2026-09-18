@@ -47,7 +47,7 @@ namespace Automatak.Simulator.DNP3
         }
 
 
-        DatabaseTemplate IDNP3Config.GetTemplateMaybeNull(string alias)
+        DatabaseTemplate? IDNP3Config.GetTemplateMaybeNull(string alias)
         {
             if (templates.ContainsKey(alias))
             {

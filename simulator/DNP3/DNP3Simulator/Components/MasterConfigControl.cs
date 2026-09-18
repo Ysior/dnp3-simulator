@@ -34,7 +34,7 @@ namespace Automatak.Simulator.DNP3.Components
                 config.disableUnsolOnStartup = this.checkBoxDisableUnsolicited.Checked;
                 config.startupIntegrityClassMask = this.classFieldControlIntegrity.ClassFieldValue;
                 config.unsolClassMask = this.classFieldControlEnableUnsol.ClassFieldValue;
-                config.timeSyncMode = (TimeSyncMode)this.comboBoxTimeSync.SelectedItem;
+                config.timeSyncMode = this.comboBoxTimeSync.SelectedItem is TimeSyncMode value ? value : TimeSyncMode.None;
                 config.integrityOnEventOverflowIIN = this.checkBoxIntegrityOnOverflow.Checked;
                 config.responseTimeout = TimeSpan.FromMilliseconds(Decimal.ToDouble(this.numericUpDownResponseTimeout.Value));
                 config.taskRetryPeriod = TimeSpan.FromMilliseconds(Decimal.ToDouble(this.numericUpDownTaskRetryDelay.Value));

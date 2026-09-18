@@ -54,7 +54,10 @@
             // 
             // imageListLog
             // 
-            this.imageListLog.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListLog.ImageStream")));
+            this.imageListLog.Images.Add("play.ico", ((System.Drawing.Bitmap)(resources.GetObject("play"))));
+            this.imageListLog.Images.Add("pause.ico", ((System.Drawing.Bitmap)(resources.GetObject("pause"))));
+            this.imageListLog.Images.Add("clipboard_diskette.ico", ((System.Drawing.Bitmap)(resources.GetObject("clipboard_diskette"))));
+            this.imageListLog.Images.Add("log_cross.ico", ((System.Drawing.Bitmap)(resources.GetObject("log_cross"))));
             this.imageListLog.TransparentColor = System.Drawing.Color.Transparent;
             this.imageListLog.Images.SetKeyName(0, "play.ico");
             this.imageListLog.Images.SetKeyName(1, "pause.ico");
@@ -273,3 +276,4 @@
         private System.Windows.Forms.Timer timerRefresh;
     }
 }
+

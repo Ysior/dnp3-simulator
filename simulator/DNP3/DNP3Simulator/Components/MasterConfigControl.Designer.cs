@@ -91,7 +91,7 @@ namespace Automatak.Simulator.DNP3.Components
             // 
             // classFieldControlIntegrity
             // 
-            this.classFieldControlIntegrity.ClassFieldValue = ((Automatak.DNP3.Interface.ClassField)(resources.GetObject("classFieldControlIntegrity.ClassFieldValue")));
+            this.classFieldControlIntegrity.ClassFieldValue = Automatak.DNP3.Interface.ClassField.AllClasses;
             this.classFieldControlIntegrity.Location = new System.Drawing.Point(6, 19);
             this.classFieldControlIntegrity.Name = "classFieldControlIntegrity";
             this.classFieldControlIntegrity.Size = new System.Drawing.Size(77, 112);
@@ -109,7 +109,7 @@ namespace Automatak.Simulator.DNP3.Components
             // 
             // classFieldControlEnableUnsol
             // 
-            this.classFieldControlEnableUnsol.ClassFieldValue = ((Automatak.DNP3.Interface.ClassField)(resources.GetObject("classFieldControlEnableUnsol.ClassFieldValue")));
+            this.classFieldControlEnableUnsol.ClassFieldValue = Automatak.DNP3.Interface.ClassField.AllEventClasses;
             this.classFieldControlEnableUnsol.Location = new System.Drawing.Point(6, 19);
             this.classFieldControlEnableUnsol.Name = "classFieldControlEnableUnsol";
             this.classFieldControlEnableUnsol.Size = new System.Drawing.Size(77, 112);

@@ -18,7 +18,7 @@ namespace Automatak.Simulator.DNP3
         readonly string alias;
         readonly ISimulatorNodeAction openAction;        
 
-        MasterForm form = null;
+        MasterForm? form;
 
         string ISimulatorNode.Alias
         {

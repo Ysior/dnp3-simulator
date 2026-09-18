@@ -98,7 +98,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         readonly string alias;
         readonly MeasurementCache cache;
 
-        OutstationForm form = null;
+        OutstationForm? form = null;
         
         public OutstationInstance(ProxyCommandHandler handler, EventedOutstationApplication application, IOutstation outstation, OutstationStackConfig config, string alias)
         {

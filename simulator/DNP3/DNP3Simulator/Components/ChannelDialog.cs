@@ -23,9 +23,9 @@ namespace Automatak.Simulator.DNP3.Components
             this.comboBoxStopBits.DataSource = Enum.GetValues(typeof(StopBits));
             this.comboBoxFlowControl.DataSource = Enum.GetValues(typeof(FlowControl));
 
-            this.comboBoxParity.SelectedItem = Parity.NONE;
-            this.comboBoxStopBits.SelectedItem = StopBits.ONE;
-            this.comboBoxFlowControl.SelectedItem = FlowControl.NONE;           
+            this.comboBoxParity.SelectedItem = Parity.None;
+            this.comboBoxStopBits.SelectedItem = StopBits.One;
+            this.comboBoxFlowControl.SelectedItem = FlowControl.None;           
         }
 
         private void buttonADD_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace Automatak.Simulator.DNP3.Components
             }
         }
 
-        private Func<IDNP3Manager, IChannel> GetCreateFunctorMaybeNull()
+        private Func<IDNP3Manager, IChannel>? GetCreateFunctorMaybeNull()
         {
             var min = TimeSpan.FromMilliseconds(Decimal.ToDouble(numericUpDownMinRetryMS.Value));
             var max = TimeSpan.FromMilliseconds(Decimal.ToDouble(numericUpDownMaxRetryMS.Value));
@@ -73,50 +73,52 @@ namespace Automatak.Simulator.DNP3.Components
             var baud = Decimal.ToInt32(this.numericUpDownBaud.Value);
             
             var dataBits = Decimal.ToInt32(this.numericUpDownDataBits.Value);
-            var parity = (Parity)comboBoxParity.SelectedValue;
-            var flow = (FlowControl) comboBoxFlowControl.SelectedValue;
-            var stopBits = (StopBits) comboBoxStopBits.SelectedValue;
+            var parity = comboBoxParity.SelectedValue is Parity selectedParity ? selectedParity : Parity.None;
+            var flow = comboBoxFlowControl.SelectedValue is FlowControl selectedFlow ? selectedFlow : FlowControl.None;
+            var stopBits = comboBoxStopBits.SelectedValue is StopBits selectedStopBits ? selectedStopBits : StopBits.One;
 
             var flags = logLevelControl1.Filters.Flags;
-            var retry = new ChannelRetry(min, max);
+            var retry = new ChannelRetry(min, max, min);
             var ss = new SerialSettings(name, baud, dataBits, stopBits, parity, flow);
-            return (IDNP3Manager manager) => manager.AddSerial(this.textBoxID.Text, flags, retry, ss);
+            return (IDNP3Manager manager) => manager.AddSerial(this.textBoxID.Text, flags, retry, ss, ChannelListener.None());
         }
 
         private Func<IDNP3Manager, IChannel> GetTCPClientFunctor(TimeSpan min, TimeSpan max, bool useTLS)
         {
             var flags = logLevelControl1.Filters.Flags;
-            var retry = new ChannelRetry(min, max);
+            var retry = new ChannelRetry(min, max, min);
+            var endpoint = new IPEndpoint(textBoxHost.Text, Decimal.ToUInt16(numericUpDownPort.Value));
             if (useTLS)
             {
                 var config = this.clientTLSOptionsControl.Configuration;
                 return (IDNP3Manager manager) =>
-                    manager.AddTLSClient(this.textBoxID.Text, flags, retry, textBoxHost.Text, Decimal.ToUInt16(numericUpDownPort.Value), config);
+                    manager.AddTLSClient(this.textBoxID.Text, flags, retry, new List<IPEndpoint> { endpoint }, config, ChannelListener.None());
             }
             else
             {
-                return (IDNP3Manager manager) => manager.AddTCPClient(this.textBoxID.Text, flags, retry, textBoxHost.Text, Decimal.ToUInt16(numericUpDownPort.Value));
+                return (IDNP3Manager manager) => manager.AddTCPClient(this.textBoxID.Text, flags, retry, new List<IPEndpoint> { endpoint }, ChannelListener.None());
             }
         }
 
         private Func<IDNP3Manager, IChannel> GetTCPServerFunctor(TimeSpan min, TimeSpan max, bool useTLS)
         {
             var flags = logLevelControl1.Filters.Flags;
-            var retry = new ChannelRetry(min, max);
+            var retry = new ChannelRetry(min, max, min);
+            var endpoint = new IPEndpoint(textBoxServerHost.Text, Decimal.ToUInt16(numericUpDownServerPort.Value));
             if (useTLS)
             {
                 var config = this.serverTLSOptionsControl.Configuration;
                 return (IDNP3Manager manager) =>
-                    manager.AddTLSServer(this.textBoxID.Text, flags, retry, textBoxServerHost.Text, Decimal.ToUInt16(numericUpDownServerPort.Value), config);
+                    manager.AddTLSServer(this.textBoxID.Text, flags, ServerAcceptMode.CloseExisting, endpoint, config, ChannelListener.None());
             }
             else
             {
                 return (IDNP3Manager manager) =>
-                    manager.AddTCPServer(this.textBoxID.Text, flags, retry, textBoxServerHost.Text, Decimal.ToUInt16(numericUpDownServerPort.Value));
+                    manager.AddTCPServer(this.textBoxID.Text, flags, ServerAcceptMode.CloseExisting, endpoint, ChannelListener.None());
             }
         } 
 
-        public Func<IDNP3Manager, IChannel> ChannelAction
+        public Func<IDNP3Manager, IChannel>? ChannelAction
         {
             get
             {
@@ -132,7 +134,7 @@ namespace Automatak.Simulator.DNP3.Components
             }
         }
 
-        private Func<IDNP3Manager, IChannel> create = null;
+        private Func<IDNP3Manager, IChannel>? create;
 
         /*
         private void clientTlsBrowseCert_Click(object sender, EventArgs e)

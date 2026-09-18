@@ -13,7 +13,7 @@ namespace Automatak.Simulator.DNP3
     {
         void AddTemplate(string alias, DatabaseTemplate template);
 
-        DatabaseTemplate GetTemplateMaybeNull(string alias);
+        DatabaseTemplate? GetTemplateMaybeNull(string alias);
 
         IEnumerable<KeyValuePair<string, DatabaseTemplate>> Templates
         {

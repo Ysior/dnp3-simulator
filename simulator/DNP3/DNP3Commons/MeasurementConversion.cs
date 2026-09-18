@@ -8,6 +8,18 @@ using Automatak.DNP3.Interface;
 
 namespace Automatak.Simulator.DNP3.Commons
 {
+    internal static class TimestampQualityExtensions
+    {
+        public static TimestampMode ToTimestampMode(this TimestampQuality quality)
+        {
+            return quality == TimestampQuality.SYNCHRONIZED
+                ? TimestampMode.SYNCHRONIZED
+                : quality == TimestampQuality.UNSYNCHRONIZED
+                    ? TimestampMode.UNSYNCHRONIZED
+                    : TimestampMode.INVALID;
+        }
+    }
+
     public static class MeasurementConversion
     {
         public static Measurement ToMeasurement(this Binary meas, UInt16 index, TimestampMode tsmode)

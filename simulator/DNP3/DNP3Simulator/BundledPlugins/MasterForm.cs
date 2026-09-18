@@ -15,7 +15,7 @@ namespace Automatak.Simulator.DNP3
 {    
     partial class MasterForm : Form
     {
-        MeasurementCollection activeCollection = null;
+        MeasurementCollection? activeCollection;
 
         readonly IMaster master;
         readonly IMeasurementCache cache;      
@@ -30,6 +30,7 @@ namespace Automatak.Simulator.DNP3
             this.Text = String.Format("DNP3 Master ({0})", alias);
 
             this.masterScanControl1.Master = master;
+            this.masterScanControl1.Handler = cache as ISOEHandler ?? throw new InvalidOperationException("The measurement cache must handle scan events.");
 
             this.comboBoxFunctionCode.DataSource = Enum.GetValues(typeof(FunctionCode));
         }                       
@@ -102,7 +103,9 @@ namespace Automatak.Simulator.DNP3
         private void buttonSendFunction_Click(object sender, EventArgs e)
         {
             this.toolStripStatusLabel.Text = "Result: ... ";
-            var function = (FunctionCode)this.comboBoxFunctionCode.SelectedValue;
+            var function = this.comboBoxFunctionCode.SelectedValue is FunctionCode selectedFunction
+                ? selectedFunction
+                : FunctionCode.READ;
 
             /* TODO
             this.master.PerformFunction(function, Enumerable.Empty<Header>(), function.ToString(), callback);  

@@ -41,7 +41,11 @@ namespace Automatak.Simulator
 
         private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(e.LinkText);
+            var linkText = e.LinkText;
+            if (!string.IsNullOrWhiteSpace(linkText))
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(linkText) { UseShellExecute = true });
+            }
         }        
     }
 }

@@ -188,8 +188,8 @@ namespace Automatak.Simulator
             // 
             // imageList
             // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.Add(global::Automatak.Simulator.Properties.Resources.clipboard_pencil);
             this.imageList.Images.SetKeyName(0, "clipboard_pencil.png");
             // 
             // logFileControl

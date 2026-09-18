@@ -38,7 +38,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         {
             get
             {
-                var value = (DoubleBit) comboBox1.SelectedItem;
+                var value = comboBox1.SelectedItem is DoubleBit selectedValue ? selectedValue : default;
                 var quality = qualitySelector.Quality;
                 var timestamp = DateTime.Now;
                 
@@ -50,11 +50,11 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         {
             get
             {
-                var value = (DoubleBit) comboBox1.SelectedItem;
+                var value = comboBox1.SelectedItem is DoubleBit selectedValue ? selectedValue : default;
                 var quality = qualitySelector.Quality;
                 var timestamp = DateTime.Now;
                 var changes = new ChangeSet();
-                indices.Each(i => changes.Update(new DoubleBitBinary(value, quality, timestamp), i));               
+                indices.Each(i => changes.Update(new DoubleBitBinary(value, new Flags(quality), new DNPTime(timestamp)), i));               
                 return changes;
             }
         } 

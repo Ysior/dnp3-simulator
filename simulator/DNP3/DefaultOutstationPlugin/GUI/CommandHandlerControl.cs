@@ -15,8 +15,8 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
 {
     partial class CommandHandlerControl : UserControl
     {   
-        ProxyCommandHandler handler = null;
-        IMeasurementLoader loader = null;
+        ProxyCommandHandler handler = null!;
+        IMeasurementLoader loader = null!;
 
         public CommandHandlerControl()
         {
@@ -33,12 +33,12 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
             clearOperations.Click += clearOperations_Click;
         }
 
-        void clearOperations_Click(object sender, EventArgs e)
+        void clearOperations_Click(object? sender, EventArgs e)
         {
             this.listBoxLog.Items.Clear();
         }
 
-        void clearHandlers_Click(object sender, EventArgs e)
+        void clearHandlers_Click(object? sender, EventArgs e)
         {
             this.handler.ClearResponses();
             this.RepopulateList();
@@ -65,7 +65,7 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
                 if (checkBoxMapAnalog.Checked)
                 {
                     var changes = new ChangeSet();
-                    changes.Update(new AnalogOutputStatus(value, 0x01, DateTime.Now), index);
+                    changes.Update(new AnalogOutputStatus(value, new Flags(0x01), new DNPTime(DateTime.Now)), index);
                     loader.Load(changes);                    
                 }
             }
@@ -79,38 +79,38 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
             }
             else
             {
-                var output = String.Format("Accepted CROB: {0} - {1}", crob.code, index);
+                var output = String.Format("Accepted CROB: {0} - {1}", crob.opType, index);
                 this.listBoxLog.Items.Add(output);
                 if (checkBoxMapBinary.Checked)
                 {
                     var timestamp = DateTime.Now;
 
-                    switch (crob.code)
+                    switch (crob.opType)
                     {
-                        case (ControlCode.LATCH_ON):
+                        case (OperationType.LATCH_ON):
                             this.LoadSingleBinaryOutputStatus(true, index, timestamp);
                             break;
-                        case (ControlCode.LATCH_OFF):
+                        case (OperationType.LATCH_OFF):
                             this.LoadSingleBinaryOutputStatus(false, index, timestamp);
                             break;
-                        case (ControlCode.CLOSE_PULSE_ON):
+                        case (OperationType.PULSE_ON) when crob.tcc == TripCloseCode.CLOSE:
                             this.LoadSingleBinaryOutputStatus(true, index, timestamp);
                             if (crob.onTime > 0)
                                 this.LoadSingleBinaryOutputStatus(false, index, timestamp.AddMilliseconds(crob.onTime));
                             break;
-                        case (ControlCode.TRIP_PULSE_ON):
+                        case (OperationType.PULSE_ON) when crob.tcc == TripCloseCode.TRIP:
                             this.LoadSingleBinaryOutputStatus(false, index, timestamp);
                             if (crob.onTime > 0)
                                 this.LoadSingleBinaryOutputStatus(true, index, timestamp.AddMilliseconds(crob.onTime));
                             break;
-                        case (ControlCode.PULSE_ON):
+                        case (OperationType.PULSE_ON):
                             if (crob.onTime > 0)
                             {
                                 this.LoadSingleBinaryOutputStatus(true, index, timestamp);
                                 this.LoadSingleBinaryOutputStatus(false, index, timestamp.AddMilliseconds(crob.onTime));
                             }
                             break;
-                        case (ControlCode.PULSE_OFF):
+                        case (OperationType.PULSE_OFF):
                             if (crob.offTime > 0)
                             {
                                 this.LoadSingleBinaryOutputStatus(false, index, timestamp);
@@ -125,11 +125,11 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         void LoadSingleBinaryOutputStatus(bool value, ushort index, DateTime timestamp)
         {
             var changes = new ChangeSet();
-            changes.Update(new BinaryOutputStatus(value, 0x01, timestamp), index);
+            changes.Update(new BinaryOutputStatus(value, new Flags(0x01), new DNPTime(timestamp)), index);
             loader.Load(changes);            
         }
 
-        private void checkBoxEnabled_CheckedChanged(object sender, EventArgs e)
+        private void checkBoxEnabled_CheckedChanged(object? sender, EventArgs e)
         {
             this.handler.Enabled = this.checkBoxEnabled.Checked;
         }
@@ -160,17 +160,17 @@ namespace Automatak.Simulator.DNP3.DefaultOutstationPlugin
         {
             get
             {
-                return (CommandStatus)this.comboBoxCode.SelectedValue;
+                return this.comboBoxCode.SelectedValue is CommandStatus selectedStatus ? selectedStatus : default;
             }
         }
 
-        private void buttonAddBO_Click(object sender, EventArgs e)
+        private void buttonAddBO_Click(object? sender, EventArgs e)
         {
             this.handler.AddBinaryResponse(SelectedIndex, SelectedStatus);
             this.RepopulateList();                       
         }
 
-        private void buttonAddAO_Click(object sender, EventArgs e)
+        private void buttonAddAO_Click(object? sender, EventArgs e)
         {
             this.handler.AddAnalogResponse(SelectedIndex, SelectedStatus);
             this.RepopulateList();                

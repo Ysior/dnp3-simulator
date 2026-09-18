@@ -14,7 +14,7 @@ namespace Automatak.Simulator.DNP3.Components
 {
     public partial class OutstationModuleDialog : Form
     {
-        IOutstationModule selectedModule = null;
+        IOutstationModule? selectedModule;
 
         public OutstationModuleDialog(IEnumerable<IOutstationModule> modules)
         {
@@ -33,11 +33,14 @@ namespace Automatak.Simulator.DNP3.Components
 
         void SelectModule()
         {
-            this.selectedModule = (IOutstationModule)this.comboBoxModules.SelectedItem;
-            this.textBoxDesc.Text = this.selectedModule.Description;
+            if (this.comboBoxModules.SelectedItem is IOutstationModule module)
+            {
+                this.selectedModule = module;
+                this.textBoxDesc.Text = module.Description;
+            }
         }
 
-        public IOutstationModule SelectedModule
+        public IOutstationModule? SelectedModule
         {
             get
             {

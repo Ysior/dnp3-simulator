@@ -31,7 +31,7 @@ namespace Automatak.Simulator.DNP3.Components
         {
             get
             {
-                return (PointClass) comboBoxPointClass.SelectedItem;
+                return comboBoxPointClass.SelectedItem is PointClass value ? value : PointClass.Class0;
             }
         }
     }

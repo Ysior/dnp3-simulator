@@ -14,7 +14,8 @@ namespace Automatak.Simulator.DNP3.Components
 {
     public partial class MasterScanControl : UserControl
     {
-        IMaster master = null;
+        IMaster? master;
+        ISOEHandler? handler;
 
         readonly ICollection<ScanInfo> scans = new List<ScanInfo>();
 
@@ -31,9 +32,17 @@ namespace Automatak.Simulator.DNP3.Components
             }
         }
 
+        public ISOEHandler Handler
+        {
+            set
+            {
+                this.handler = value;
+            }
+        }
+
         private void addScanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (var dialog = new ScanDialog(master))
+            using (var dialog = new ScanDialog(master!, handler!))
             {
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
@@ -76,7 +85,7 @@ namespace Automatak.Simulator.DNP3.Components
                 return;
             }
 
-            ListViewItem choice = null;
+            ListViewItem? choice = null;
                       
             foreach (ListViewItem item in listViewScans.Items)
             {
@@ -93,7 +102,10 @@ namespace Automatak.Simulator.DNP3.Components
             }
             else
             {
-                this.GetScanMenu(((IMasterScan)choice.Tag)).Show(listViewScans, e.X, e.Y);
+                if (choice.Tag is IMasterScan scan)
+                {
+                    this.GetScanMenu(scan).Show(listViewScans, e.X, e.Y);
+                }
             }            
         }
 
@@ -101,7 +113,7 @@ namespace Automatak.Simulator.DNP3.Components
         {
             var menu = new ContextMenuStrip();
             var demand = new ToolStripMenuItem("Demand");
-            demand.Click += (object sender, EventArgs e) => {
+            demand.Click += (object? sender, EventArgs e) => {
                 scan.Demand();
             };
             menu.Items.Add(demand);

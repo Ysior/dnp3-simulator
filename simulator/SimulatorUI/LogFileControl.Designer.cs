@@ -50,7 +50,8 @@
             // 
             // imageList
             // 
-            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.Images.Add("folder.png", ((System.Drawing.Bitmap)(resources.GetObject("folder"))));
+            this.imageList.Images.Add("cross.png", ((System.Drawing.Bitmap)(resources.GetObject("cross"))));
             this.imageList.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList.Images.SetKeyName(0, "folder.png");
             this.imageList.Images.SetKeyName(1, "cross.png");
@@ -88,3 +89,4 @@
         private System.Windows.Forms.Button buttonStop;
     }
 }
+
