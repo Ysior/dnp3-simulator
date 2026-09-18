@@ -15,16 +15,6 @@
     <ROW Property="ProductVersion" Value="2.0.2" Options="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{EF2DD817-42F0-4EF3-9BF8-4325257D10CD}"/>
-    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
@@ -41,9 +31,9 @@
     <ROW Component="ProductInformation" ComponentId="{A1D3073D-B20B-43EB-B781-77EBA3D2F66B}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="RelayOutstationPlugin.dll" ComponentId="{D282BC65-8AF2-476D-8488-331BABF2CC32}" Directory_="APPDIR" Attributes="0" KeyPath="RelayOutstationPlugin.dll"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{CB87ED33-F8EA-457F-A1F7-23BFE281E368}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="SimulatorAPI.dll" ComponentId="{BC6E81FF-292B-4848-8FFB-E58591A5B724}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorAPI.dll"/>
+    <ROW Component="ModuleAPI.dll" ComponentId="{BC6E81FF-292B-4848-8FFB-E58591A5B724}" Directory_="APPDIR" Attributes="0" KeyPath="ModuleAPI.dll"/>
     <ROW Component="SimulatorApplication.exe" ComponentId="{55D0A9A6-6BA2-4076-8EDA-64C2F185CE4F}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorApplication.exe"/>
-    <ROW Component="SimulatorCommons.dll" ComponentId="{26008915-0457-4559-9CDD-BEAD4A36ABE0}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorCommons.dll"/>
+    <ROW Component="Commons.dll" ComponentId="{26008915-0457-4559-9CDD-BEAD4A36ABE0}" Directory_="APPDIR" Attributes="0" KeyPath="Commons.dll"/>
     <ROW Component="SimulatorDNP3.dll" ComponentId="{44334AC1-0B9E-467F-B871-B21EE74442A3}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorDNP3.dll"/>
     <ROW Component="SimulatorUI.dll" ComponentId="{25705C63-6B92-46CB-BA67-2440DCB61289}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorUI.dll"/>
   </COMPONENT>
@@ -59,8 +49,8 @@
     <ROW File="DNP3Commons.dll" Component_="DNP3Commons.dll" FileName="DNP3CO~1.DLL|DNP3Commons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3Commons.dll" SelfReg="false"/>
     <ROW File="DNP3PluginAPI.dll" Component_="DNP3PluginAPI.dll" FileName="DNP3PL~1.DLL|DNP3PluginAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3PluginAPI.dll" SelfReg="false"/>
     <ROW File="RelayOutstationPlugin.dll" Component_="RelayOutstationPlugin.dll" FileName="RELAYO~1.DLL|RelayOutstationPlugin.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\RelayOutstationPlugin.dll" SelfReg="false"/>
-    <ROW File="SimulatorAPI.dll" Component_="SimulatorAPI.dll" FileName="SIMULA~1.DLL|SimulatorAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorAPI.dll" SelfReg="false"/>
-    <ROW File="SimulatorCommons.dll" Component_="SimulatorCommons.dll" FileName="SIMULA~2.DLL|SimulatorCommons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorCommons.dll" SelfReg="false"/>
+    <ROW File="ModuleAPI.dll" Component_="ModuleAPI.dll" FileName="MODULE~1.DLL|ModuleAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\ModuleAPI.dll" SelfReg="false"/>
+    <ROW File="Commons.dll" Component_="Commons.dll" FileName="COMMON~1.DLL|Commons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\Commons.dll" SelfReg="false"/>
     <ROW File="SimulatorDNP3.dll" Component_="SimulatorDNP3.dll" FileName="SIMULA~3.DLL|SimulatorDNP3.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorDNP3.dll" SelfReg="false"/>
     <ROW File="SimulatorUI.dll" Component_="SimulatorUI.dll" FileName="SIMULA~4.DLL|SimulatorUI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorUI.dll" SelfReg="false"/>
   </COMPONENT>
@@ -140,9 +130,9 @@
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
     <ROW Feature_="MainFeature" Component_="RelayOutstationPlugin.dll"/>
     <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorAPI.dll"/>
+    <ROW Feature_="MainFeature" Component_="ModuleAPI.dll"/>
     <ROW Feature_="MainFeature" Component_="SimulatorApplication.exe"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorCommons.dll"/>
+    <ROW Feature_="MainFeature" Component_="Commons.dll"/>
     <ROW Feature_="MainFeature" Component_="SimulatorDNP3.dll"/>
     <ROW Feature_="MainFeature" Component_="SimulatorUI.dll"/>
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
