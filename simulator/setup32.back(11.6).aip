@@ -1,30 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="11.3" version="24.0" Modules="simple" RootPath="." Language="en" Id="{91D07599-AF6F-4E64-9F52-2DEB44658048}">
-  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXAppDetailsComponent;FixupComponent;AppXCapabilitiesComponent;AppXDependenciesComponent;AppXProductDetailsComponent;AppXVisualAssetsComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
-  </COMPONENT>
+<DOCUMENT Type="Advanced Installer" CreateVersion="11.3" version="11.6" Modules="simple" RootPath="." Language="en" Id="{91D07599-AF6F-4E64-9F52-2DEB44658048}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
-    <ROW Property="ARPCOMMENTS" Value="Instalator zawiera dane do instalacji symulatora DNP3 [|ProductName]." ValueLocId="*"/>
-    <ROW Property="ARPPRODUCTICON" Value="automatak_1.exe" Type="8"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPPRODUCTICON" Value="automatak.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Automatak"/>
     <ROW Property="ProductCode" Value="1033:{A253FBE5-A23D-4AA6-B85A-325DCD5C8946} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="DNP3 Simulator"/>
-    <ROW Property="ProductVersion" Value="2.0.2" Options="32"/>
+    <ROW Property="ProductVersion" Value="2.0.2" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{EF2DD817-42F0-4EF3-9BF8-4325257D10CD}"/>
-    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT60" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
-    <ROW Property="WindowsTypeNT60Display" MultiBuildValue="DefaultBuild:Windows Vista/Server 2008" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
@@ -32,7 +19,6 @@
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="APPDIR" ComponentId="{674B2AB5-C52F-4EF4-82CB-995237463552}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="DNP3CLRAdapter.dll" ComponentId="{087125C2-6CB5-48E5-9991-05DA7C38EFE1}" Directory_="APPDIR" Attributes="0" KeyPath="DNP3CLRAdapter.dll"/>
     <ROW Component="DNP3CLRInterface.dll" ComponentId="{5D363D2E-827D-4BA5-9BB2-187684AC29B6}" Directory_="APPDIR" Attributes="0" KeyPath="DNP3CLRInterface.dll"/>
     <ROW Component="DNP3Commons.dll" ComponentId="{FF5FBD77-35E7-4C77-A209-3025E3254DFE}" Directory_="APPDIR" Attributes="0" KeyPath="DNP3Commons.dll"/>
@@ -48,24 +34,25 @@
     <ROW Component="SimulatorUI.dll" ComponentId="{25705C63-6B92-46CB-BA67-2440DCB61289}" Directory_="APPDIR" Attributes="0" KeyPath="SimulatorUI.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="DNP3CLRAdapter.dll DNP3CLRInterface.dll DNP3Commons.dll DNP3PluginAPI.dll DefaultOutstationPlugin.dll ProductInformation RelayOutstationPlugin.dll SHORTCUTDIR SimulatorAPI.dll SimulatorApplication.exe SimulatorCommons.dll SimulatorDNP3.dll SimulatorUI.dll"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="SimulatorApplication.exe" Component_="SimulatorApplication.exe" FileName="SIMULA~1.EXE|SimulatorApplication.exe" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorApplication.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="DefaultOutstationPlugin.dll" Component_="DefaultOutstationPlugin.dll" FileName="DEFAUL~1.DLL|DefaultOutstationPlugin.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DefaultOutstationPlugin.dll" SelfReg="false"/>
-    <ROW File="DNP3CLRAdapter.dll" Component_="DNP3CLRAdapter.dll" FileName="DNP3CL~1.DLL|DNP3CLRAdapter.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3CLRAdapter.dll" SelfReg="false"/>
-    <ROW File="DNP3CLRInterface.dll" Component_="DNP3CLRInterface.dll" FileName="DNP3CL~2.DLL|DNP3CLRInterface.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3CLRInterface.dll" SelfReg="false"/>
-    <ROW File="DNP3Commons.dll" Component_="DNP3Commons.dll" FileName="DNP3CO~1.DLL|DNP3Commons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3Commons.dll" SelfReg="false"/>
-    <ROW File="DNP3PluginAPI.dll" Component_="DNP3PluginAPI.dll" FileName="DNP3PL~1.DLL|DNP3PluginAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\DNP3PluginAPI.dll" SelfReg="false"/>
-    <ROW File="RelayOutstationPlugin.dll" Component_="RelayOutstationPlugin.dll" FileName="RELAYO~1.DLL|RelayOutstationPlugin.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\RelayOutstationPlugin.dll" SelfReg="false"/>
-    <ROW File="SimulatorAPI.dll" Component_="SimulatorAPI.dll" FileName="SIMULA~1.DLL|SimulatorAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorAPI.dll" SelfReg="false"/>
-    <ROW File="SimulatorCommons.dll" Component_="SimulatorCommons.dll" FileName="SIMULA~2.DLL|SimulatorCommons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorCommons.dll" SelfReg="false"/>
-    <ROW File="SimulatorDNP3.dll" Component_="SimulatorDNP3.dll" FileName="SIMULA~3.DLL|SimulatorDNP3.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorDNP3.dll" SelfReg="false"/>
-    <ROW File="SimulatorUI.dll" Component_="SimulatorUI.dll" FileName="SIMULA~4.DLL|SimulatorUI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Debug\net8.0-windows\SimulatorUI.dll" SelfReg="false"/>
+    <ROW File="DNP3CLRAdapter.dll" Component_="DNP3CLRAdapter.dll" FileName="DNP3CL~1.DLL|DNP3CLRAdapter.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\DNP3CLRAdapter.dll" SelfReg="false" NextFile="DNP3CLRInterface.dll"/>
+    <ROW File="DNP3CLRInterface.dll" Component_="DNP3CLRInterface.dll" FileName="DNP3CL~2.DLL|DNP3CLRInterface.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\DNP3CLRInterface.dll" SelfReg="false" NextFile="DNP3Commons.dll"/>
+    <ROW File="DNP3Commons.dll" Component_="DNP3Commons.dll" FileName="DNP3CO~1.DLL|DNP3Commons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\DNP3Commons.dll" SelfReg="false" NextFile="DNP3PluginAPI.dll"/>
+    <ROW File="DNP3PluginAPI.dll" Component_="DNP3PluginAPI.dll" FileName="DNP3PL~1.DLL|DNP3PluginAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\DNP3PluginAPI.dll" SelfReg="false" NextFile="RelayOutstationPlugin.dll"/>
+    <ROW File="DefaultOutstationPlugin.dll" Component_="DefaultOutstationPlugin.dll" FileName="DEFAUL~1.DLL|DefaultOutstationPlugin.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\DefaultOutstationPlugin.dll" SelfReg="false" NextFile="DNP3CLRAdapter.dll"/>
+    <ROW File="RelayOutstationPlugin.dll" Component_="RelayOutstationPlugin.dll" FileName="RELAYO~1.DLL|RelayOutstationPlugin.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\RelayOutstationPlugin.dll" SelfReg="false" NextFile="SimulatorAPI.dll"/>
+    <ROW File="SimulatorAPI.dll" Component_="SimulatorAPI.dll" FileName="SIMULA~1.DLL|SimulatorAPI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\SimulatorAPI.dll" SelfReg="false" NextFile="SimulatorCommons.dll"/>
+    <ROW File="SimulatorApplication.exe" Component_="SimulatorApplication.exe" FileName="SIMULA~1.EXE|SimulatorApplication.exe" Attributes="0" SourcePath="Simulator\bin\x64\Release\SimulatorApplication.exe" SelfReg="false" NextFile="DefaultOutstationPlugin.dll" DigSign="true"/>
+    <ROW File="SimulatorCommons.dll" Component_="SimulatorCommons.dll" FileName="SIMULA~2.DLL|SimulatorCommons.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\SimulatorCommons.dll" SelfReg="false" NextFile="SimulatorDNP3.dll"/>
+    <ROW File="SimulatorDNP3.dll" Component_="SimulatorDNP3.dll" FileName="SIMULA~3.DLL|SimulatorDNP3.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\SimulatorDNP3.dll" SelfReg="false" NextFile="SimulatorUI.dll"/>
+    <ROW File="SimulatorUI.dll" Component_="SimulatorUI.dll" FileName="SIMULA~4.DLL|SimulatorUI.dll" Attributes="0" SourcePath="Simulator\bin\x64\Release\SimulatorUI.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\..\..\Desktop\output" PackageFileName="setup" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\..\..\..\Desktop\output" PackageFileName="setup" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
     <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
@@ -79,7 +66,6 @@
     <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
     <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
     <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
-    <ROW Fragment="Themes.aip" Path="&lt;AI_FRAGS&gt;Themes.aip"/>
     <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
     <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
     <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
@@ -115,12 +101,10 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
-    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
-    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
@@ -131,47 +115,26 @@
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[ProgramMenuFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
   </COMPONENT>
-  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
-    <ROW Feature_="MainFeature" Component_="DNP3CLRAdapter.dll"/>
-    <ROW Feature_="MainFeature" Component_="DNP3CLRInterface.dll"/>
-    <ROW Feature_="MainFeature" Component_="DNP3Commons.dll"/>
-    <ROW Feature_="MainFeature" Component_="DNP3PluginAPI.dll"/>
-    <ROW Feature_="MainFeature" Component_="DefaultOutstationPlugin.dll"/>
-    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="RelayOutstationPlugin.dll"/>
-    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorAPI.dll"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorApplication.exe"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorCommons.dll"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorDNP3.dll"/>
-    <ROW Feature_="MainFeature" Component_="SimulatorUI.dll"/>
-    <ROW Feature_="MainFeature" Component_="APPDIR"/>
-  </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
-    <ROW Name="automatak_1.exe" SourcePath="images\automatak_1.ico" Index="0"/>
+    <ROW Name="automatak.exe" SourcePath="images\automatak_1.ico" Index="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
     <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
     <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
-    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
-    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="51"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
-    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
-    <ROW Action="AI_DpiContentScale" Sequence="52"/>
-    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_DpiContentScale" Sequence="51"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="VersionNT64 AND VersionNT &gt;= 603" Description="[ProductName] requires 64-bit Windows 10 or Windows 11." Builds="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
-    <ROW Registry="Manufacturer" Root="-1" Key="Software\[Manufacturer]" Name="\"/>
     <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
-    <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
-    <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
