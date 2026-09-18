@@ -3,9 +3,21 @@
   "operationId": "78f40da6-4a61-4eb9-830d-0f9f06756b40",
   "description": "Upgrade .NET projects to newer .NET versions, including guidance on current release status, support lifecycle (LTS/STS), and recommended upgrade targets.",
   "startTime": "2026-09-17T20:13:43.7396913Z",
-  "lastUpdateTime": "2026-09-17T20:13:58.8189149Z",
+  "lastUpdateTime": "2026-09-18T10:43:34.0529477Z",
   "properties": {
-    "UpgradeTargetFramework": "net8.0"
+    "taskStates": {
+      "01-prerequisites": "Completed",
+      "02-sdk-style-conversion": "Completed",
+      "02.01-leaf-projects": "Completed",
+      "02.02-shared-api-projects": "Completed",
+      "02.03-relay-plugin": "Completed",
+      "02.04-dnp3-module": "Completed",
+      "02.05-simulator-root": "Completed",
+      "03-simulator-application": "Completed",
+      "03.04-entrypoint-validation": "Completed",
+      "04-library-consolidation": "Completed",
+      "05-final-validation": "Completed"
+    }
   },
   "folderPath": ""
 }
