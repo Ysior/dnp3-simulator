@@ -35,7 +35,8 @@ bld/
 
 
 .vs/
-.vscode/
+.vscode/*
+
 
 Generated\ Files/
 
