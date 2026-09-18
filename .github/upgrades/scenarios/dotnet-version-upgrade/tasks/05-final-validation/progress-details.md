@@ -1,0 +1,18 @@
+# Progress Details
+
+## 2026-09-18
+
+- Research completed before validation. Loaded `scenario-instructions.md`, `assessment.md`, the project graph and aggregate package report, the scenario `execution.md`, `breakdown-hints/common.md`, `breakdown-hints/framework-migration.md`, and the required building-projects, managing-target-frameworks, modifying-project-properties, and WinForms build skills.
+- Scope confirmed: `simulator.sln` contains exactly 9 projects. All active projects are single-targeted on the intended .NET 8 variants: `Commons=net8.0`; the other 8 projects use `net8.0-windows`. The direct project-reference graph resolved with no broken references.
+- `dotnet restore simulator.sln --verbosity minimal`: passed; errors 0, warnings 0. Active restored assets contain `opendnp3 3.1.2` consistently, plus `System.IO.Ports 8.0.0` where used and `System.Resources.Extensions 8.0.0` where used. No active package conflict was reported.
+- `dotnet build simulator.sln --configuration Debug --no-restore --verbosity minimal`: passed for all 9 projects; errors 0, warnings 6. All six warnings are `CS8603` possible null returns in `simulator/DNP3/DNP3Simulator/ChannelNode.cs` and `DNP3SimulatorPlugin.cs`; they are pre-existing nullable warnings and were not suppressed or changed.
+- Output verification: all 9 expected managed assemblies exist under `bin/Debug/net8.0` or `bin/Debug/net8.0-windows`. The solution configuration maps `Debug|Any CPU` to `Debug|x86`, while project files specify `PlatformTarget=x64`; both x86 and standard output trees exist and native adapter/interface DLLs are present in them. This architecture/configuration mismatch requires manual runtime confirmation.
+- Resource verification: 40 source `.resx` files contain embedded binary/System.Drawing data and 94 generated `.resources` files were produced. Resource generation completed without errors.
+- Native asset verification: `opendnp3.3.1.2` provides both x64 and x86 `DNP3CLRAdapter.dll`/`DNP3CLRInterface.dll`; the build copied the native files into active output folders. Confirm the selected runtime output architecture matches the native DLL architecture when launching the simulator.
+- Binding configuration verification: no `bindingRedirect`, `assemblyBinding`, `oldVersion`, or `dependentAssembly` entries remain in source or generated configs (0 matches). `Simulator/App.config` and `SimulatorUI/App.config`, and their generated copies, still contain legacy `.NETFramework,Version=v4.5` `supportedRuntime` entries; review and remove or replace them during a runtime cleanup pass if they are not needed by the .NET 8 host.
+- Out-of-solution residual risk: `simulator/DNP3/DNP3Commons/DNP3Commons — kopia.csproj` and its `packages.config` still reference the old `v6.0.8`/`net45` project shape and `opendnp3 2.2.0-M1`. They are not listed by `simulator.sln` or referenced by active projects, so they were intentionally not modified in this validation task.
+- Test baseline: skipped intentionally because `scenario-instructions.md` sets `Test Coverage: Skip`; no generated behavioral baseline or automated test suite was run. Manual recommendations: launch the x64 simulator executable, verify WinForms startup and embedded images/icons, load both bundled plugins, exercise serial/network DNP3 communication, and confirm native DLL loading and plugin discovery from the selected output folder.
+
+## Decomposition Verdict
+
+Atomic final-validation audit. No source or project files required changes; the loaded dependency-ordering, package-replacement, stub-resolution, System.Web, and Windows API isolation hints did not require task splitting.
