@@ -1,6 +1,6 @@
 # Migration Progress
 
-**Progress**: 2/10 tasks complete <progress value="20" max="100"></progress> 20%
+**Progress**: 3/10 tasks complete <progress value="30" max="100"></progress> 30%
 **Status**: In Progress - Task 02-sdk-style-conversion
 
 ## Tasks
@@ -8,7 +8,7 @@
 - ✅ 01-prerequisites: Verify the .NET 8 toolchain ([Content](tasks/01-prerequisites/task.md), [Progress](tasks/01-prerequisites/progress-details.md))
 - 🔄 02-sdk-style-conversion: Convert legacy project files ([Content](tasks/02-sdk-style-conversion/task.md), [Progress](tasks/02-sdk-style-conversion/progress-details.md))
   - ✅ 02.01-leaf-projects: Validate or convert leaf projects ([Content](tasks/02.01-leaf-projects/task.md), [Progress](tasks/02.01-leaf-projects/progress-details.md))
-  - 🔲 02.02-shared-api-projects: Validate or convert shared API projects ([Content](tasks/02.02-shared-api-projects/task.md))
+  - ✅ 02.02-shared-api-projects: Validate or convert shared API projects ([Content](tasks/02.02-shared-api-projects/task.md), [Progress](tasks/02.02-shared-api-projects/progress-details.md))
   - 🔲 02.03-relay-plugin: Convert and validate RelayOutstationPlugin ([Content](tasks/02.03-relay-plugin/task.md))
   - 🔲 02.04-dnp3-module: Convert and validate DNP3Module ([Content](tasks/02.04-dnp3-module/task.md))
   - 🔲 02.05-simulator-root: Convert and validate Simulator application ([Content](tasks/02.05-simulator-root/task.md))

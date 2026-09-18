@@ -1,8 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Library</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <!-- Ustala architekturę pod natywne DLLe DNP3 -->
@@ -15,10 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
-   
     <ProjectReference Include="..\..\SimulatorAPI\ModuleAPI.csproj" />
-    <ProjectReference Include="..\..\DNP3\API\DNP3.API.csproj" />
-    <ProjectReference Include="..\..\DNP3\Commons\Commons.csproj" />
+    <ProjectReference Include="..\..\Commons\Commons.csproj" />
+    <ProjectReference Include="..\DNP3PluginAPI\DNP3PluginAPI.csproj" />
+    <ProjectReference Include="..\DNP3Commons\DNP3Commons.csproj" />
   </ItemGroup>
 
 </Project>
