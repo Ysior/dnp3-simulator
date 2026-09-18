@@ -1,9 +1,12 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <OutputType>Exe</OutputType> <!-- Użyj 'Library' dla bibliotek DLL, 'WinExe' dla aplikacji okienkowych -->
+    <OutputType>Library</OutputType>
     <TargetFramework>net8.0</TargetFramework>
+    <PlatformTarget>x86</PlatformTarget>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>disable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
